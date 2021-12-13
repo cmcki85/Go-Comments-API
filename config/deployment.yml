@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: restaurant-full-stack-api
+  name: comments-api
 spec: 
   replicas: 3
   strategy: 
@@ -12,11 +12,11 @@ spec:
       maxUnavailable: 0
   selector: 
     matchLabels: 
-      name: restaurant-full-stack-api
+      name: comments-api
   template:
     metadata:
       labels:
-        name: restaurant-full-stack-api
+        name: comments-api
     spec:
       containers:
         - name: application
@@ -26,12 +26,14 @@ spec:
             - containerPort: 8080
           env: 
             - name: DB_PORT
-            value: "$DB_PORT"
+              value: "25060"
             - name: DB_HOST
-              value: "$DB_HOST"
+              value: "db-postgresql-nyc3-66784-do-user-10327895-0.b.db.ondigitalocean.com"
             - name: DB_PASSWORD
-              value: "$DB_PASSWORD"
+              value: "QobhyxzJaZNpXS53"
             - name: DB_TABLE
-              value: "$DB_TABLE"
+              value: "defaultdb"
             - name: DB_USERNAME
-              value: "$DB_USERNAME"
+              value: "doadmin"
+            - name: SSL_MODE
+              value: "require"
