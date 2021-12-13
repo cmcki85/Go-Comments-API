@@ -1,8 +1,9 @@
 package database
 
 import (
-	"os"
 	"fmt"
+	"os"
+
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/postgres"
 	log "github.com/sirupsen/logrus"
@@ -10,7 +11,7 @@ import (
 
 // NewDatabase - returns a pointer to a DB object.
 func NewDatabase() (*gorm.DB, error) {
-	log.Info("Setting up a nee database connection")
+	log.Info("Setting up a new database connection")
 
 	dbUsername := os.Getenv("DB_USERNAME")
 	dbPassword := os.Getenv("DB_PASSWORD")

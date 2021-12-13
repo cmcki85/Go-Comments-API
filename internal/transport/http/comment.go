@@ -1,5 +1,14 @@
 package http
 
+import (
+	"encoding/json"
+	"net/http"
+	"strconv"
+
+	"github.com/cmcki85/RESTurant-Full-Stack/internal/comment"
+	"github.com/gorilla/mux"
+)
+
 // GetComment - retrives a comment via ID
 func (h *Handler) GetComment(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
