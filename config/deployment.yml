@@ -23,7 +23,7 @@ spec:
           image: "cmcki85/restaurant-full-stack:latest"
           imagePullPolicy: Always
           ports:
-            - containerPort: 8080
+            - containerPort: 80
           env: 
             - name: DB_PORT
               value: "25060"
